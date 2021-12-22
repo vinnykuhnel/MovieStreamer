@@ -1,0 +1,32 @@
+﻿@page
+@model movieapp.Pages.CatalogModel
+
+<h1>Movie Catalog</h1>
+<br />
+
+
+
+<div class="col-12 border p-3 mt-3">
+        @if (Model.movies.Count() > 0)
+        {
+            <table class="table table-striped border">
+                @foreach(var item in Model.movies)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m=>item.Name)
+                        </td>
+
+                        <td>
+                            <a href="~/View/@item.ID" >View Movie</a>
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No Movies Available.</p>
+        }
+</div>

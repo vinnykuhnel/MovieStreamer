@@ -1,0 +1,17 @@
+﻿@page
+@model movieapp.Pages.IndexModel
+
+
+<h2>Welcome to local streamer!</h2>
+<body>
+    <form asp-page="Index" method="post" enctype="multipart/form-data">
+        <input name="UploadedFile" id="UploadedFile" type="file" asp-for="UploadedFile" />
+        <input type="submit" />
+    </form>
+    <br />
+    <form action="catalog" method="get">
+        <label for="submit">Click to view the current catalog: </label>
+        <input type="submit" name="submit" value="Catalog" />
+    </form>
+</body>
+
